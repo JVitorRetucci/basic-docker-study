@@ -1,0 +1,26 @@
+# Set the version of docker compose to use
+version: "3.9"
+
+# The containers that compose the project
+services:
+        azurite:
+                container_name: "azurite"
+                image: mcr.microsoft.com/azure-storage/azurite
+                networks:
+                        - storage
+                ports:
+                        - 10000:10000
+                        - 10001:10001
+        app:
+                container_name: "app"
+                build:
+                        context: ./
+                        dockerfile: ./Dockerfile
+                ports: 
+                        - 8080:8080
+                networks:
+                        - storage
+        networks:
+                storage:
+                        driver: bridge
+                     
