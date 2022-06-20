@@ -1,8 +1,8 @@
 # Repositório de estudo Docker + Azurite
 
 ## Dependências:
-	* NodeJS
-	* Docker
+ * NodeJS
+ * Docker
 
 ## Executar
 
